@@ -7,20 +7,7 @@ import { ChevronDown } from 'lucide-react'
 import clsx from 'clsx'
 
 const slides = [
-    {
-        id: 1,
-        image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=85',
-        tag: 'Luxury Living',
-        heading: ['Pinnacle', 'Of Luxury', 'Living.'],
-        sub: 'Where your dreams can flourish at their extreme.',
-    },
-    {
-        id: 2,
-        image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=85',
-        tag: 'Exceptional Properties',
-        heading: ['Captivating', 'Landscapes', 'Of Malabar.'],
-        sub: 'Exquisite properties in the captivating landscapes of the Malabar Area.',
-    },
+
     {
         id: 3,
         image: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1920&q=85',
@@ -128,9 +115,6 @@ export default function HeroSlider() {
                 </div>
             ))}
 
-            {/* Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white/50 via-white/40 to-white/10 z-10" />
-            <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-white/10 z-10" />
 
             {/* Content */}
             <div className="relative z-20 h-full flex items-center px-8 md:px-16 lg:px-24 max-w-7xl">
