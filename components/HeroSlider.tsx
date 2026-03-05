@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ChevronDown } from 'lucide-react'
 import clsx from 'clsx'
-import ScrollReveal from './ScrollReveal'
 
 const slides = [
     {
