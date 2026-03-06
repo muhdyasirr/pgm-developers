@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ChevronDown } from 'lucide-react'
@@ -20,7 +20,6 @@ const features = [
 ]
 
 export default function HeroSection() {
-    const [animating, setAnimating] = useState(false)
     const { open: openEnquiry } = useEnquiry()
     const headingRefs = useRef<(HTMLSpanElement | null)[]>([])
     const tagRef = useRef<HTMLSpanElement>(null)
@@ -30,8 +29,7 @@ export default function HeroSection() {
     const boxRef = useRef<HTMLDivElement>(null)
 
     const runEntrance = () => {
-        setAnimating(true)
-        const tl = gsap.timeline({ onComplete: () => setAnimating(false) })
+        const tl = gsap.timeline()
 
         gsap.set([tagRef.current, subRef.current, btnRef.current, boxRef.current], { opacity: 0, y: 24 })
         gsap.set(headingRefs.current.filter(Boolean), { y: '110%' })

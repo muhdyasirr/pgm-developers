@@ -1,7 +1,6 @@
 import Navbar from '@/components/Navbar'
 import HeroSlider from '@/components/HeroSlider'
 import AboutSection from '@/components/AboutSection'
-import ConfigurationSection from '@/components/ConfigurationSection'
 import FeaturedServices from '@/components/FeaturedServices'
 import SideImageSlider from '@/components/SideImageSlider'
 import ExpertiseSection from '@/components/ExpertiseSection'
