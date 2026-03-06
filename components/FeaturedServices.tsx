@@ -82,7 +82,7 @@ export default function FeaturedServices() {
             <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full pointer-events-none"
                 style={{ background: 'radial-gradient(circle, rgba(194,160,106,0.07) 0%, transparent 70%)', transform: 'translate(30%, 30%)' }} />
 
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 lg:gap-16">
                 {/* Left: heading block */}
                 <div className="md:w-2/5 flex flex-col justify-center">
                     <p className="lux-label mb-5">What We Offer</p>
@@ -100,11 +100,11 @@ export default function FeaturedServices() {
                 {/* Right: 2+3 grid of clay cards */}
                 <div className="md:w-3/5 flex flex-col gap-4">
                     {/* Row 1 */}
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {services.slice(0, 2).map((svc) => <ServiceCard key={svc.number} svc={svc} />)}
                     </div>
                     {/* Row 2 */}
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         {services.slice(2).map((svc) => <ServiceCard key={svc.number} svc={svc} />)}
                     </div>
                 </div>

@@ -17,7 +17,7 @@ const amenityFeatures = [
 export default function ExpertiseSection() {
     const { open: openEnquiry } = useEnquiry()
     return (
-        <section id="expertise" className="py-28 md:py-36 overflow-hidden" style={{ background: 'linear-gradient(160deg, #faf7f2 0%, #fefcf8 50%, #faf7f2 100%)' }}>
+        <section id="expertise" className="py-16 md:py-28 lg:py-36 overflow-hidden" style={{ background: 'linear-gradient(160deg, #faf7f2 0%, #fefcf8 50%, #faf7f2 100%)' }}>
             <div className="max-w-7xl mx-auto px-6 md:px-12">
 
                 {/* Label */}
@@ -28,7 +28,7 @@ export default function ExpertiseSection() {
 
                 {/* Gallery grid */}
                 <ScrollReveal delay={0.05}>
-                    <div className="grid grid-cols-3 grid-rows-2 gap-3 h-[70vh] min-h-[420px] mb-24">
+                    <div className="grid grid-cols-3 grid-rows-2 gap-2 sm:gap-3 h-[55vw] sm:h-[65vh] min-h-[240px] sm:min-h-[380px] mb-12 md:mb-24">
                         <div className="relative col-span-2 row-span-2 overflow-hidden group">
                             <Image src="/14 CLUB HOUSE 01.jpeg" alt="Club House" fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="66vw" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -80,7 +80,7 @@ export default function ExpertiseSection() {
 
                         {/* Clay amenity chips */}
                         <ScrollReveal delay={0.3}>
-                            <div className="grid grid-cols-2 gap-4 mb-12">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-10 md:mb-12">
                                 {amenityFeatures.map(({ icon: Icon, label }) => (
                                     <div key={label} className="clay-card flex items-center gap-4 px-5 py-4">
                                         <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"

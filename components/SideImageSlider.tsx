@@ -29,9 +29,9 @@ export default function SideImageSlider() {
 
     return (
         <section id="featured" className="overflow-hidden" style={{ background: '#fefcf8' }}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[85vh]">
+            <div className="grid grid-cols-1 lg:grid-cols-2" style={{ minHeight: '80vh' }}>
                 {/* Left: Image */}
-                <div className="relative min-h-[50vh] lg:min-h-full">
+                <div className="relative" style={{ minHeight: '50vh' }}>
                     <Swiper
                         modules={[Navigation, EffectFade, Autoplay]}
                         effect="fade"
@@ -65,7 +65,7 @@ export default function SideImageSlider() {
                 </div>
 
                 {/* Right: Text */}
-                <div className="flex items-center px-10 md:px-16 py-20 lg:py-0" style={{ background: 'linear-gradient(150deg, #fefcf8 0%, #faf7f2 100%)' }}>
+                <div className="flex items-center px-6 sm:px-10 md:px-14 py-14 lg:py-0" style={{ background: 'linear-gradient(150deg, #fefcf8 0%, #faf7f2 100%)' }}>
                     <div className="max-w-lg">
                         <ScrollReveal>
                             <div className="flex items-center gap-4 mb-8">

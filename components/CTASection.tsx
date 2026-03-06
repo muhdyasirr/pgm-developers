@@ -12,7 +12,7 @@ export default function CTASection() {
         <section id="contact" className="overflow-hidden" style={{ background: '#fefcf8' }}>
             <div className="lux-divider" />
 
-            <div className="max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
+            <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 py-16 md:py-24 lg:py-32">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
                     <div>
@@ -47,7 +47,7 @@ export default function CTASection() {
                     style={{ borderRadius: '16px', boxShadow: '0 20px 60px rgba(194,160,106,0.12)', border: '1px solid rgba(194,160,106,0.15)' }}>
                     {/* Map */}
                     <ScrollReveal className="lg:col-span-2" delay={0.1}>
-                        <div className="relative w-full h-[420px] lg:h-[500px]">
+                        <div className="relative w-full" style={{ height: 'min(420px, 60vw)', minHeight: '260px' }}>
                             <iframe
                                 src={mapSrc} width="100%" height="100%"
                                 style={{ border: 0, filter: 'saturate(90%) contrast(1.05)', display: 'block' }}

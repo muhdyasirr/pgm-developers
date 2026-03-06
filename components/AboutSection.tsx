@@ -41,7 +41,7 @@ export default function AboutSection() {
                     <span className="lux-label">Who We Are</span>
                 </ScrollReveal>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                     {/* Left: text */}
                     <div className="relative pl-8">
                         <div ref={lineRef} className="absolute left-0 top-0 w-[3px] h-full origin-top" style={{ background: 'linear-gradient(180deg, #c2a06a 0%, rgba(194,160,106,0.2) 100%)' }} />
@@ -78,14 +78,14 @@ export default function AboutSection() {
 
                     {/* Right: clay stat cards */}
                     <ScrollReveal delay={0.2} direction="left">
-                        <div className="grid grid-cols-2 gap-5">
+                        <div className="grid grid-cols-2 gap-3 sm:gap-5">
                             {[
                                 { num: '14+', label: 'Group Companies' },
                                 { num: '20+', label: 'Years Experience' },
                                 { num: '500+', label: 'Happy Families' },
                                 { num: '50+', label: 'Projects Delivered' },
                             ].map((stat) => (
-                                <div key={stat.num} className="clay-card p-8 flex flex-col items-center text-center">
+                                <div key={stat.num} className="clay-card p-5 sm:p-8 flex flex-col items-center text-center">
                                     <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '52px', fontWeight: 700, color: '#c2a06a', lineHeight: 1 }}>
                                         {stat.num}
                                     </span>
