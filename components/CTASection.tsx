@@ -1,107 +1,113 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import Image from 'next/image'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { MapPin, Phone, Mail, Navigation } from 'lucide-react'
 import ScrollReveal from './ScrollReveal'
-
-gsap.registerPlugin(ScrollTrigger)
+import { useEnquiry } from '@/context/EnquiryContext'
 
 export default function CTASection() {
-    const bgRef = useRef<HTMLDivElement>(null)
-    const sectionRef = useRef<HTMLElement>(null)
-
-    useEffect(() => {
-        if (!bgRef.current || !sectionRef.current) return
-        // Parallax background
-        gsap.to(bgRef.current, {
-            yPercent: 30,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: sectionRef.current,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: 1.5,
-            },
-        })
-    }, [])
+    const { open: openEnquiry } = useEnquiry()
+    const mapSrc = 'https://maps.google.com/maps?q=11.1520003,75.8925509&z=16&output=embed'
 
     return (
-        <section ref={sectionRef} id="contact" className="relative py-40 md:py-52 overflow-hidden">
-            {/* Parallax Background */}
-            <div ref={bgRef} className="absolute inset-[-20%] z-0">
-                <Image
-                    src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80"
-                    alt="CTA Background"
-                    fill
-                    className="object-cover object-center"
-                    sizes="100vw"
-                />
+        <section id="contact" className="overflow-hidden" style={{ background: '#fefcf8' }}>
+            <div className="lux-divider" />
+
+            <div className="max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
+                {/* Header */}
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+                    <div>
+                        <ScrollReveal>
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-8 h-px bg-gold" />
+                                <span className="lux-label">Find Us</span>
+                            </div>
+                        </ScrollReveal>
+                        <ScrollReveal delay={0.1}>
+                            <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(40px, 5.5vw, 74px)', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.05 }}>
+                                Our{' '}
+                                <em style={{ fontStyle: 'italic', color: '#c2a06a' }}>Location</em>
+                            </h2>
+                        </ScrollReveal>
+                    </div>
+
+                    <ScrollReveal delay={0.2} direction="left">
+                        <div className="flex flex-col sm:flex-row gap-3">
+                            <a href="https://maps.google.com/?q=Kozhikode,Kerala,India" target="_blank" rel="noopener noreferrer" className="lux-btn">
+                                <Navigation size={13} /> Open Map
+                            </a>
+                            <button onClick={() => openEnquiry()} className="lux-btn-filled">
+                                Enquire Now
+                            </button>
+                        </div>
+                    </ScrollReveal>
+                </div>
+
+                {/* Map + Info */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 overflow-hidden"
+                    style={{ borderRadius: '16px', boxShadow: '0 20px 60px rgba(194,160,106,0.12)', border: '1px solid rgba(194,160,106,0.15)' }}>
+                    {/* Map */}
+                    <ScrollReveal className="lg:col-span-2" delay={0.1}>
+                        <div className="relative w-full h-[420px] lg:h-[500px]">
+                            <iframe
+                                src={mapSrc} width="100%" height="100%"
+                                style={{ border: 0, filter: 'saturate(90%) contrast(1.05)', display: 'block' }}
+                                allowFullScreen loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                title="PGM Developers Location"
+                            />
+                        </div>
+                    </ScrollReveal>
+
+                    {/* Info Panel */}
+                    <ScrollReveal delay={0.2} direction="left">
+                        <div className="flex flex-col justify-between p-10 lg:p-12 h-full min-h-[420px]" style={{ background: '#0a0a0a' }}>
+                            <div>
+                                <div className="w-8 h-px bg-gold mb-8" />
+                                <h3 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '30px', fontWeight: 700, color: 'white', marginBottom: '4px' }}>
+                                    PGM Developers
+                                </h3>
+                                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '9px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', marginBottom: '36px' }}>
+                                    Malabar Region · Kerala
+                                </p>
+
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                                    <div className="flex items-start gap-4">
+                                        <MapPin size={15} className="text-gold mt-0.5 flex-shrink-0" />
+                                        <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 300, color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>
+                                            NH 66, Kozhikode,<br />Kerala – 673 001, India
+                                        </p>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                        <Phone size={15} className="text-gold flex-shrink-0" />
+                                        <a href="tel:+919072224466" style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 300, color: 'rgba(255,255,255,0.65)' }}
+                                            className="hover:text-gold transition-colors duration-300">
+                                            +91 90 72 22 44 66
+                                        </a>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                        <Mail size={15} className="text-gold flex-shrink-0" />
+                                        <a href="mailto:info@pgmdevelopers.com" style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 300, color: 'rgba(255,255,255,0.65)' }}
+                                            className="hover:text-gold transition-colors duration-300">
+                                            info@pgmdevelopers.com
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="mt-12">
+                                <a href="https://maps.google.com/?q=Kozhikode,Kerala,India" target="_blank" rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-3 group"
+                                    style={{ fontFamily: 'Inter, sans-serif', fontSize: '12px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#c2a06a' }}>
+                                    <span>Get Directions</span>
+                                    <span className="block h-px bg-gold group-hover:w-16 transition-all duration-500" style={{ width: '32px' }} />
+                                </a>
+                            </div>
+                        </div>
+                    </ScrollReveal>
+                </div>
             </div>
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-light/75 z-10" />
-            {/* Gold accent bar top */}
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent z-20" />
-
-            {/* Content */}
-            <div className="relative z-20 max-w-5xl mx-auto px-6 md:px-12 text-center">
-                <ScrollReveal>
-                    <div className="flex items-center justify-center gap-4 mb-8">
-                        <div className="w-12 h-px bg-gold" />
-                        <span className="text-gold text-xs font-semibold tracking-[0.3em] uppercase">
-                            Start Your Journey
-                        </span>
-                        <div className="w-12 h-px bg-gold" />
-                    </div>
-                </ScrollReveal>
-
-                <ScrollReveal delay={0.1}>
-                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.02] text-dark mb-6">
-                        Ready to Build{' '}
-                        <span className="text-gold font-display italic">Something</span>{' '}
-                        Extraordinary?
-                    </h2>
-                </ScrollReveal>
-
-                <ScrollReveal delay={0.2}>
-                    <p className="text-gray-text text-lg font-light max-w-2xl mx-auto mb-12">
-                        Partner with PGM Developers to transform your vision into a landmark that stands
-                        the test of time. Let&apos;s create something exceptional together.
-                    </p>
-                </ScrollReveal>
-
-                <ScrollReveal delay={0.3}>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a
-                            href="mailto:info@pgmdevelopers.com"
-                            className="px-10 py-5 bg-gold text-dark font-bold text-sm tracking-widest uppercase hover:bg-gold-light transition-colors duration-300 w-full sm:w-auto text-center"
-                        >
-                            Get In Touch
-                        </a>
-                        <a
-                            href="tel:+919072224466"
-                            className="px-10 py-5 border border-dark/30 text-dark font-medium text-sm tracking-widest uppercase hover:border-gold hover:text-gold transition-colors duration-300 w-full sm:w-auto text-center"
-                        >
-                            Call Us Now
-                        </a>
-                    </div>
-                </ScrollReveal>
-
-                <ScrollReveal delay={0.4}>
-                    <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-dark/30 text-sm">
-                        <span>info@pgmdevelopers.com</span>
-                        <span className="hidden sm:block w-px h-4 bg-dark/20" />
-                        <span>+91 90 72 22 44 66</span>
-                        <span className="hidden sm:block w-px h-4 bg-dark/20" />
-                        <span>Kerala, India</span>
-                    </div>
-                </ScrollReveal>
-            </div>
-
-            {/* Gold accent bar bottom */}
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent z-20" />
+            <div className="lux-divider" />
         </section>
     )
 }

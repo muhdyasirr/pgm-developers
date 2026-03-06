@@ -1,6 +1,7 @@
 'use client'
 
 import { Instagram, Facebook, Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react'
+import { useEnquiry } from '@/context/EnquiryContext'
 
 const quickLinks = [
     { label: 'About Us', href: '#about' },
@@ -24,37 +25,39 @@ const socials = [
 ]
 
 export default function Footer() {
+    const { open: openEnquiry } = useEnquiry()
     const handleNav = (href: string) => {
         const el = document.querySelector(href)
         if (el) el.scrollIntoView({ behavior: 'smooth' })
     }
 
     return (
-        <footer className="bg-light-2 border-t border-dark/5">
+        <footer style={{ background: '#faf7f2', borderTop: '1px solid rgba(194,160,106,0.15)' }}>
             {/* Main Footer */}
             <div className="max-w-7xl mx-auto px-6 md:px-12 py-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+
                     {/* Brand */}
                     <div className="lg:col-span-1">
                         <div className="mb-6">
-                            <div className="text-3xl font-black tracking-wider text-dark leading-none">PGM</div>
-                            <div className="text-[10px] font-light tracking-[0.35em] text-gold uppercase mt-0.5">
+                            <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '28px', fontWeight: 900, letterSpacing: '0.06em', color: '#0a0a0a', lineHeight: 1 }}>PGM</div>
+                            <div style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '10px', letterSpacing: '0.35em', color: '#c2a06a', textTransform: 'uppercase', fontStyle: 'italic', marginTop: '2px' }}>
                                 Developers
                             </div>
                         </div>
-                        <p className="text-gray-text text-sm font-light leading-relaxed mb-6 max-w-xs">
+                        <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 300, lineHeight: 1.85, color: '#6b7280', marginBottom: '20px', maxWidth: '260px' }}>
                             PGM Group of Companies consists of 14 great organizations across Kerala and Gulf Countries with successful business experience in Rubber, Gold, Shipping & Transport and Real-estate & Developers.
                         </p>
                         {/* Socials */}
                         <div className="flex items-center gap-3">
                             {socials.map(({ icon: Icon, href, label }) => (
-                                <a
-                                    key={label}
-                                    href={href}
-                                    aria-label={label}
-                                    className="w-10 h-10 border border-dark/10 flex items-center justify-center text-gray-text hover:border-gold hover:text-gold transition-colors duration-300"
+                                <a key={label} href={href} aria-label={label}
+                                    className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:border-gold group"
+                                    style={{ border: '1px solid rgba(194,160,106,0.25)', color: '#6b7280' }}
+                                    onMouseEnter={e => { const el = e.currentTarget; el.style.borderColor = '#c2a06a'; el.style.color = '#c2a06a' }}
+                                    onMouseLeave={e => { const el = e.currentTarget; el.style.borderColor = 'rgba(194,160,106,0.25)'; el.style.color = '#6b7280' }}
                                 >
-                                    <Icon size={16} />
+                                    <Icon size={15} />
                                 </a>
                             ))}
                         </div>
@@ -62,17 +65,17 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-dark text-xs font-semibold tracking-[0.25em] uppercase mb-6">
-                            Quick Links
-                        </h4>
-                        <ul className="space-y-3">
+                        <h4 className="lux-label mb-6" style={{ color: '#0a0a0a' }}>Quick Links</h4>
+                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                             {quickLinks.map((link) => (
                                 <li key={link.href}>
-                                    <button
-                                        onClick={() => handleNav(link.href)}
-                                        className="text-gray-text hover:text-gold text-sm font-light transition-colors duration-300 flex items-center gap-2 group"
+                                    <button onClick={() => handleNav(link.href)}
+                                        className="flex items-center gap-2 group transition-colors duration-300"
+                                        style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 300, color: '#6b7280' }}
+                                        onMouseEnter={e => (e.currentTarget.style.color = '#c2a06a')}
+                                        onMouseLeave={e => (e.currentTarget.style.color = '#6b7280')}
                                     >
-                                        <span className="w-0 group-hover:w-4 h-px bg-gold transition-all duration-300" />
+                                        <span className="w-0 group-hover:w-4 h-px bg-gold transition-all duration-300 block" />
                                         {link.label}
                                     </button>
                                 </li>
@@ -82,72 +85,61 @@ export default function Footer() {
 
                     {/* Services */}
                     <div>
-                        <h4 className="text-dark text-xs font-semibold tracking-[0.25em] uppercase mb-6">
-                            Services
-                        </h4>
-                        <ul className="space-y-3">
+                        <h4 className="lux-label mb-6" style={{ color: '#0a0a0a' }}>Services</h4>
+                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                             {services.map((s) => (
-                                <li key={s}>
-                                    <span className="text-gray-text text-sm font-light">{s}</span>
-                                </li>
+                                <li key={s} style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 300, color: '#6b7280' }}>{s}</li>
                             ))}
                         </ul>
                     </div>
 
                     {/* Contact */}
                     <div>
-                        <h4 className="text-dark text-xs font-semibold tracking-[0.25em] uppercase mb-6">
-                            Contact Us
-                        </h4>
-                        <ul className="space-y-4">
+                        <h4 className="lux-label mb-6" style={{ color: '#0a0a0a' }}>Contact Us</h4>
+                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                             <li>
-                                <a
-                                    href="mailto:info@pgmdevelopers.com"
-                                    className="flex items-start gap-3 text-gray-text hover:text-gold text-sm font-light transition-colors duration-300 group"
+                                <a href="mailto:info@pgmdevelopers.com" className="flex items-start gap-3 transition-colors duration-300"
+                                    style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 300, color: '#6b7280' }}
+                                    onMouseEnter={e => (e.currentTarget.style.color = '#c2a06a')}
+                                    onMouseLeave={e => (e.currentTarget.style.color = '#6b7280')}
                                 >
-                                    <Mail size={14} className="mt-0.5 shrink-0" />
+                                    <Mail size={13} style={{ marginTop: '2px', flexShrink: 0, color: '#c2a06a' }} />
                                     info@pgmdevelopers.com
                                 </a>
                             </li>
                             <li>
-                                <a
-                                    href="tel:+919072224466"
-                                    className="flex items-center gap-3 text-gray-text hover:text-gold text-sm font-light transition-colors duration-300"
+                                <a href="tel:+919072224466" className="flex items-center gap-3 transition-colors duration-300"
+                                    style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', fontWeight: 300, color: '#6b7280' }}
+                                    onMouseEnter={e => (e.currentTarget.style.color = '#c2a06a')}
+                                    onMouseLeave={e => (e.currentTarget.style.color = '#6b7280')}
                                 >
-                                    <Phone size={14} className="shrink-0" />
+                                    <Phone size={13} style={{ flexShrink: 0, color: '#c2a06a' }} />
                                     +91 90 72 22 44 66
                                 </a>
                             </li>
                             <li>
-                                <div className="flex items-start gap-3 text-gray-text text-sm font-light">
-                                    <MapPin size={14} className="mt-0.5 shrink-0" />
-                                    <span>
-                                        Kodathipadi, Mannarkkad,
-                                        <br />
-                                        Kerala, India — 678582
-                                    </span>
+                                <div className="flex items-start gap-3"
+                                    style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', fontWeight: 300, color: '#6b7280' }}>
+                                    <MapPin size={13} style={{ marginTop: '2px', flexShrink: 0, color: '#c2a06a' }} />
+                                    <span>Kodathipadi, Mannarkkad,<br />Kerala, India — 678582</span>
                                 </div>
                             </li>
                         </ul>
 
-                        <a
-                            href="mailto:info@pgmdevelopers.com"
-                            className="mt-8 inline-flex items-center gap-2 text-gold text-xs font-semibold tracking-widest uppercase border border-gold/40 px-5 py-3 hover:bg-gold hover:text-dark transition-colors duration-300"
-                        >
-                            Send Enquiry
-                            <ArrowUpRight size={14} />
-                        </a>
+                        <button onClick={() => openEnquiry()} className="lux-btn mt-8 inline-flex">
+                            Send Enquiry <ArrowUpRight size={13} />
+                        </button>
                     </div>
                 </div>
             </div>
 
             {/* Bottom bar */}
-            <div className="border-t border-dark/5">
-                <div className="max-w-7xl mx-auto px-6 md:px-12 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <span className="text-dark/40 text-xs font-light tracking-widest">
+            <div style={{ borderTop: '1px solid rgba(194,160,106,0.12)' }}>
+                <div className="max-w-7xl mx-auto px-6 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', fontWeight: 300, letterSpacing: '0.1em', color: 'rgba(10,10,10,0.35)' }}>
                         © {new Date().getFullYear()} PGM Developers. All Rights Reserved.
                     </span>
-                    <span className="text-dark/40 text-xs font-light">
+                    <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '13px', fontStyle: 'italic', color: '#c2a06a', letterSpacing: '0.08em' }}>
                         Build. Inspire. Endure.
                     </span>
                 </div>
