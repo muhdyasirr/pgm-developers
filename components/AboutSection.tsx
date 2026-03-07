@@ -8,6 +8,17 @@ import { useEnquiry } from '@/context/EnquiryContext'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const features = [
+    '3BHK & 4BHK Luxury Villas',
+    '6.5 Acres Gated Community',
+    'Free Solar System',
+    '24/7 Security',
+    'Swimming Pool & Clubhouse',
+    'Health Club & Recreation Hall',
+    'Landscaped Green Areas',
+    'RERA Approved Project',
+]
+
 export default function AboutSection() {
     const lineRef = useRef<HTMLDivElement>(null)
     const { open: openEnquiry } = useEnquiry()
@@ -25,7 +36,7 @@ export default function AboutSection() {
     }, [])
 
     return (
-        <section id="about" className="relative py-32 md:py-44 overflow-hidden" style={{ background: 'linear-gradient(160deg, #fefcf8 0%, #faf7f2 60%, #f4f0e8 100%)' }}>
+        <section id="about" className="relative py-14 md:py-32 lg:py-44 overflow-hidden" style={{ background: 'linear-gradient(160deg, #fefcf8 0%, #faf7f2 60%, #f4f0e8 100%)' }}>
             {/* Very subtle texture */}
             <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(194,160,106,0.07) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
 
@@ -38,7 +49,7 @@ export default function AboutSection() {
                 {/* Label */}
                 <ScrollReveal className="flex items-center gap-4 mb-16">
                     <div className="w-10 h-px bg-gold" />
-                    <span className="lux-label">Who We Are</span>
+                    <span className="lux-label">About the Project</span>
                 </ScrollReveal>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -47,22 +58,20 @@ export default function AboutSection() {
                         <div ref={lineRef} className="absolute left-0 top-0 w-[3px] h-full origin-top" style={{ background: 'linear-gradient(180deg, #c2a06a 0%, rgba(194,160,106,0.2) 100%)' }} />
 
                         <ScrollReveal direction="left">
-                            <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(44px, 5.5vw, 76px)', fontWeight: 700, lineHeight: 1.05, color: '#0a0a0a' }}>
-                                Building{' '}
-                                <em className="text-gold" style={{ fontStyle: 'italic' }}>Tomorrow&apos;s</em>{' '}
-                                Landmarks Today
+                            <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(36px, 4.5vw, 64px)', fontWeight: 700, lineHeight: 1.05, color: '#0a0a0a' }}>
+                                Rivera Villas — <em className="text-gold" style={{ fontStyle: 'italic' }}>Premium Gated</em> Villa Community
                             </h2>
                         </ScrollReveal>
 
                         <ScrollReveal delay={0.15}>
                             <p className="lux-body mt-8 mb-6">
-                                Experience with us, a pinnacle of luxury living where your dreams can flourish at their extreme. We, the fully approved developers, proudly provide villas with an exceptional portfolio of exquisite properties across the captivating landscapes of the Malabar area.
+                                Rivera Villas is a premium gated villa project located in Pothozhi, Mannarkkad, Palakkad, spread across 6.5 acres of lush greenery. The project offers thoughtfully designed 3BHK (1850 Sqft) and 4BHK (2200 Sqft) luxury villas with modern architecture, spacious interiors, and quality amenities.
                             </p>
                         </ScrollReveal>
 
                         <ScrollReveal delay={0.25}>
                             <p className="lux-body mb-10">
-                                At PGM Developers, we go beyond constructing exceptional properties. We provide a comprehensive range of services to ensure a seamless and delightful experience for our clients — from initial consultation to post-sales support.
+                                Each villa comes with a Free Solar System, helping homeowners reduce electricity costs and promote sustainable living. RERA Registered (K-RERA/PRJ/PKD/071/2024), ensuring approved plans, legal transparency, and complete buyer protection for a safe and reliable investment.
                             </p>
                         </ScrollReveal>
 
@@ -76,21 +85,27 @@ export default function AboutSection() {
                         </ScrollReveal>
                     </div>
 
-                    {/* Right: clay stat cards */}
+                    {/* Right: feature cards */}
                     <ScrollReveal delay={0.2} direction="left">
-                        <div className="grid grid-cols-2 gap-3 sm:gap-5">
-                            {[
-                                { num: '14+', label: 'Group Companies' },
-                                { num: '20+', label: 'Years Experience' },
-                                { num: '500+', label: 'Happy Families' },
-                                { num: '50+', label: 'Projects Delivered' },
-                            ].map((stat) => (
-                                <div key={stat.num} className="clay-card p-5 sm:p-8 flex flex-col items-center text-center">
-                                    <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '52px', fontWeight: 700, color: '#c2a06a', lineHeight: 1 }}>
-                                        {stat.num}
+                        <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                            {features.map((feature) => (
+                                <div key={feature} className="clay-card p-4 sm:p-5 flex items-center gap-3">
+                                    <span style={{
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        width: '28px',
+                                        height: '28px',
+                                        flexShrink: 0,
+                                        background: 'rgba(194,160,106,0.12)',
+                                        borderRadius: '50%',
+                                    }}>
+                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                            <path d="M2 6L5 9L10 3" stroke="#c2a06a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
                                     </span>
-                                    <span className="lux-label mt-3" style={{ color: '#6b7280' }}>
-                                        {stat.label}
+                                    <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '14px', fontWeight: 500, color: '#0a0a0a', lineHeight: 1.3 }}>
+                                        {feature}
                                     </span>
                                 </div>
                             ))}

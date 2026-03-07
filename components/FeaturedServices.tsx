@@ -77,7 +77,7 @@ const services = [
 export default function FeaturedServices() {
     const { open: openEnquiry } = useEnquiry()
     return (
-        <section className="w-full py-28 px-6 md:px-16 relative overflow-hidden" style={{ background: '#fefcf8' }}>
+        <section className="w-full py-12 md:py-20 lg:py-28 px-6 md:px-16 relative overflow-hidden" style={{ background: '#fefcf8' }}>
             {/* Background decoration */}
             <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full pointer-events-none"
                 style={{ background: 'radial-gradient(circle, rgba(194,160,106,0.07) 0%, transparent 70%)', transform: 'translate(30%, 30%)' }} />
@@ -92,7 +92,7 @@ export default function FeaturedServices() {
                     <p className="lux-body mb-10 max-w-sm">
                         We&apos;ll walk with you through the entire process of acquiring your dream home — one milestone at a time.
                     </p>
-                    <button className="lux-btn self-start" onClick={() => openEnquiry()}>
+                    <button className="lux-btn-filled self-start" onClick={() => openEnquiry()}>
                         Enquire Now <span style={{ fontSize: '14px' }}>↗</span>
                     </button>
                 </div>
@@ -125,9 +125,9 @@ function ServiceCard({ svc }: { svc: typeof services[number] }) {
                     {svc.title}
                 </p>
                 <p className="lux-body mb-3" style={{ fontSize: '15px', lineHeight: 1.6 }}>{svc.desc}</p>
-                <button className="flex items-center gap-1.5" style={{ fontFamily: 'Inter, sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#c2a06a' }}>
+                {/* <button className="flex items-center gap-1.5" style={{ fontFamily: 'Inter, sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#c2a06a' }}>
                     View More <span style={{ fontSize: '11px' }}>↗</span>
-                </button>
+                </button> */}
             </div>
         </div>
     )

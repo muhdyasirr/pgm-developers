@@ -13,7 +13,7 @@ const villaOptions = [
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
 export default function EnquiryModal() {
-    const { isOpen, close } = useEnquiry()
+    const { isOpen, close, setSubmitted } = useEnquiry()
     const overlayRef = useRef<HTMLDivElement>(null)
 
     const [form, setForm] = useState({ name: '', phone: '', villaType: '', message: '' })
@@ -53,6 +53,7 @@ export default function EnquiryModal() {
             })
             if (res.ok) {
                 setStatus('success')
+                setSubmitted()
                 setForm({ name: '', phone: '', villaType: '', message: '' })
             } else {
                 throw new Error('Server error')

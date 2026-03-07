@@ -17,7 +17,7 @@ const amenityFeatures = [
 export default function ExpertiseSection() {
     const { open: openEnquiry } = useEnquiry()
     return (
-        <section id="expertise" className="py-16 md:py-28 lg:py-36 overflow-hidden" style={{ background: 'linear-gradient(160deg, #faf7f2 0%, #fefcf8 50%, #faf7f2 100%)' }}>
+        <section id="expertise" className="py-8 md:py-28 lg:py-36 overflow-hidden" style={{ background: 'linear-gradient(160deg, #faf7f2 0%, #fefcf8 50%, #faf7f2 100%)' }}>
             <div className="max-w-7xl mx-auto px-6 md:px-12">
 
                 {/* Label */}

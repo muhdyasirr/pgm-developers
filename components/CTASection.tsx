@@ -12,7 +12,7 @@ export default function CTASection() {
         <section id="contact" className="overflow-hidden" style={{ background: '#fefcf8' }}>
             <div className="lux-divider" />
 
-            <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 py-16 md:py-24 lg:py-32">
+            <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 py-8 md:py-24 lg:py-32">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
                     <div>

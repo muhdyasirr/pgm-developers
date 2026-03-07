@@ -9,11 +9,13 @@ import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 import EnquiryModal from '@/components/EnquiryModal'
 import { EnquiryProvider } from '@/context/EnquiryContext'
+import FloatingContact from '@/components/FloatingContact'
 
 export default function Home() {
   return (
     <EnquiryProvider>
       <EnquiryModal />
+      <FloatingContact />
       <main>
         <Navbar />
         <HeroSlider />

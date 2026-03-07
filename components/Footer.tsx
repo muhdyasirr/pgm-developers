@@ -126,7 +126,7 @@ export default function Footer() {
                             </li>
                         </ul>
 
-                        <button onClick={() => openEnquiry()} className="lux-btn mt-8 inline-flex">
+                        <button onClick={() => openEnquiry()} className="lux-btn-filled mt-8 inline-flex">
                             Send Enquiry <ArrowUpRight size={13} />
                         </button>
                     </div>
