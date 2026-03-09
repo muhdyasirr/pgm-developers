@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { GoogleTagManager } from '@next/third-parties/google'
+import GTMTracker from '@/components/GTMTracker'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -15,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-light text-dark overflow-x-hidden">{children}</body>
+      <GoogleTagManager gtmId="GTM-PDC8KBVM" />
+      <body className="bg-light text-dark overflow-x-hidden">
+        <GTMTracker />
+        {children}
+      </body>
     </html>
   )
 }
