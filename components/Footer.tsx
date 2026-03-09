@@ -1,6 +1,6 @@
 'use client'
 
-import { Instagram, Facebook, Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react'
+import { Instagram, Facebook, Mail, Phone, MapPin } from 'lucide-react'
 import { useEnquiry } from '@/context/EnquiryContext'
 
 const quickLinks = [

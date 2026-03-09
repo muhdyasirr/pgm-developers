@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import clsx from 'clsx'
+import Image from 'next/image'
 import { useEnquiry } from '@/context/EnquiryContext'
 
 const navLinks = [
@@ -43,21 +44,20 @@ export default function Navbar() {
             >
                 <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12 flex items-center justify-between">
                     {/* Logo */}
-                    <a href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-3 group">
-                        <div className="flex flex-col items-start">
-                            <span className={clsx(
-                                'text-2xl font-black tracking-wider leading-none transition-colors duration-500',
-                                scrolled ? 'text-[#0a0a0a]' : 'text-white'
-                            )} style={{ fontFamily: 'Outfit, sans-serif' }}>PGM</span>
-                            <span className="text-[11px] font-light tracking-[0.35em] uppercase leading-none mt-0.5 text-gold font-cormorant italic">
-                                Developers
-                            </span>
-                        </div>
-                        <div className="hidden md:block w-px h-7 mx-1" style={{ background: 'rgba(194,160,106,0.35)' }} />
-                        <span className={clsx(
-                            'hidden md:block text-[10px] font-light tracking-[0.18em] uppercase leading-tight max-w-[72px] font-inter transition-colors duration-500',
-                            scrolled ? 'text-[#6b7280]' : 'text-white/55'
-                        )}>Build. Inspire. Endure.</span>
+                    <a href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center group">
+                        <Image
+                            src="/logo1.png"
+                            alt="PGM Rivera Premium Villas"
+                            width={260}
+                            height={100}
+                            className="object-contain transition-all duration-500"
+                            style={{
+                                height: '90px',
+                                width: 'auto',
+                                filter: scrolled ? 'none' : 'brightness(10)',
+                            }}
+                            priority
+                        />
                     </a>
 
                     {/* Desktop Nav */}

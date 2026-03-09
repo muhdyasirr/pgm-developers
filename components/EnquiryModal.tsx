@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { X, CheckCircle, Loader2 } from 'lucide-react'
 import { useEnquiry } from '@/context/EnquiryContext'
+import { useRouter } from 'next/navigation'
 
 const villaOptions = [
     { value: '', label: 'Select Preferred Budget' },
@@ -15,6 +16,7 @@ type Status = 'idle' | 'loading' | 'success' | 'error'
 export default function EnquiryModal() {
     const { isOpen, close, setSubmitted } = useEnquiry()
     const overlayRef = useRef<HTMLDivElement>(null)
+    const router = useRouter()
 
     const [form, setForm] = useState({ name: '', phone: '', villaType: '', message: '' })
     const [status, setStatus] = useState<Status>('idle')
@@ -52,9 +54,10 @@ export default function EnquiryModal() {
                 body: JSON.stringify(form),
             })
             if (res.ok) {
-                setStatus('success')
                 setSubmitted()
                 setForm({ name: '', phone: '', villaType: '', message: '' })
+                close()
+                router.push('/thank-you')
             } else {
                 throw new Error('Server error')
             }

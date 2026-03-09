@@ -7,7 +7,7 @@ import { Navigation, Autoplay } from 'swiper/modules'
 import type { Swiper as SwiperType } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import { ChevronLeft, ChevronRight, Download } from 'lucide-react'
+import { Download } from 'lucide-react'
 import ScrollReveal from './ScrollReveal'
 import { useEnquiry } from '@/context/EnquiryContext'
 

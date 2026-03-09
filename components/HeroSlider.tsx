@@ -8,15 +8,14 @@ import { useEnquiry } from '@/context/EnquiryContext'
 
 const slide = {
     tag: 'Trusted Developer',
-    heading: ['Innovation.', 'Quality.', 'Satisfaction.'],
-    sub: 'Our resolute commitment to innovation, quality, and customer satisfaction.',
+    heading: ['Where refined living', 'meets serenity.'],
 }
 
 const features = [
-    { label: 'STARTING PRICE ₹ 6.75 CR*' },
-    { label: 'DISCOUNTS UPTO ₹ 50 LACS*' },
-    { label: 'PAYMENT PLAN 25:75' },
-    { label: 'PAY ONLY 25%*' },
+    { label: 'STARTING PRICE 80 LAKHS' },
+    { label: 'FREE SOLAR SYSTEM ' },
+    { label: 'BANK LOAN FACILITY' },
+    { label: 'PAY ONLY 15%*' },
 ]
 
 export default function HeroSection() {
@@ -63,6 +62,52 @@ export default function HeroSection() {
             {/* Content — stacks vertically on mobile */}
             <div className="relative z-20 flex flex-col justify-between min-h-[100svh] px-5 sm:px-8 md:px-14 lg:px-20 pt-28 pb-6 sm:pt-32 max-w-7xl mx-auto w-full">
 
+                {/* RERA info — right side, desktop only */}
+                <div className="hidden md:flex absolute right-0 bottom-[22%] items-center gap-3 z-30">
+
+                    {/* Text block (right-aligned) */}
+                    <div className="flex flex-col items-end justify-center text-right">
+                        <p style={{
+                            fontFamily: 'Inter, sans-serif',
+                            fontSize: '11px',
+                            fontWeight: 500,
+                            color: 'white',
+                            letterSpacing: '0.05em',
+                            textTransform: 'uppercase',
+                            marginBottom: '4px'
+                        }}>
+                            K-RERA/PRJ/PKD/071/2024
+                        </p>
+                        <p style={{
+                            fontFamily: 'Inter, sans-serif',
+                            fontSize: '10px',
+                            color: 'rgba(255,255,255,0.7)',
+                            marginBottom: '2px'
+                        }}>
+                            rera.kerala.gov.in
+                        </p>
+                        <p style={{
+                            fontFamily: 'Inter, sans-serif',
+                            fontSize: '10px',
+                            color: 'rgba(255,255,255,0.7)'
+                        }}>
+                            www.pgmdevelopers.com
+                        </p>
+                    </div>
+
+                    {/* QR Code */}
+                    <div className="bg-transparent p-1.5 rounded-sm">
+                        <Image
+                            src="/qr.png"
+                            alt="RERA QR Code"
+                            width={110}
+                            height={110}
+                            className="object-contain"
+                            style={{ display: 'block' }}
+                        />
+                    </div>
+                </div>
+
                 {/* Top: headline block */}
                 <div className="flex-1 flex flex-col justify-center">
                     {/* Tag */}
@@ -95,8 +140,8 @@ export default function HeroSection() {
 
                     {/* Sub */}
                     <p ref={subRef} className="text-white/70 mb-7 sm:mb-9 opacity-0 max-w-xs sm:max-w-sm md:max-w-md"
-                        style={{ fontFamily: 'Inter, sans-serif', fontSize: 'clamp(13px, 3.5vw, 16px)', lineHeight: 1.85, fontWeight: 300 }}>
-                        {slide.sub}
+                        style={{ fontFamily: 'Inter, sans-serif', fontSize: 'clamp(18px, 4.5vw, 28px)', lineHeight: 1.6, fontWeight: 300 }}>
+                        PGM Rivera <span style={{ color: '#c2a06a', fontWeight: 600 }}>Mannarkkad</span> premium villa community
                     </p>
 
                     {/* Button */}
