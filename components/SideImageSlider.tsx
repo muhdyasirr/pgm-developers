@@ -135,13 +135,15 @@ export default function BrochureSection() {
                             )}
                         </div>
 
-                        <button
-                            onClick={handleDownloadClick}
-                            className="lux-btn-filled inline-flex items-center gap-3 flex-shrink-0"
-                        >
-                            <Download size={15} />
-                            {hasSubmitted ? 'Download PDF' : 'Get Brochure'}
-                        </button>
+                        <div className="flex justify-center sm:justify-end flex-shrink-0">
+                            <button
+                                onClick={handleDownloadClick}
+                                className="lux-btn-filled inline-flex items-center gap-3"
+                            >
+                                <Download size={15} />
+                                {hasSubmitted ? 'Download PDF' : 'Get Brochure'}
+                            </button>
+                        </div>
                     </div>
                 </ScrollReveal>
 

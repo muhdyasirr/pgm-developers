@@ -78,12 +78,12 @@ export default function Navbar() {
                         <li>
                             <button
                                 onClick={() => openEnquiry()}
-                                className={clsx(
-                                    'ml-2 px-5 py-2.5 text-[12px] font-inter font-semibold tracking-[0.18em] uppercase border rounded-sm transition-all duration-300',
-                                    scrolled
-                                        ? 'border-[rgba(194,160,106,0.5)] text-[#0a0a0a] hover:bg-gold hover:border-gold hover:text-white'
-                                        : 'border-white/40 text-white hover:bg-white/15 hover:border-white/70'
-                                )}
+                                className="lux-btn-filled !py-2.5 !px-6 !min-w-[160px]"
+                                style={{
+                                    background: scrolled ? '#c2a06a' : 'rgba(255,255,255,0.1)',
+                                    borderColor: scrolled ? '#c2a06a' : 'rgba(255,255,255,0.4)',
+                                    color: '#fff'
+                                }}
                             >
                                 Enquire Now
                             </button>
@@ -94,12 +94,12 @@ export default function Navbar() {
                     <div className="flex md:hidden items-center gap-3">
                         <button
                             onClick={() => openEnquiry()}
-                            className={clsx(
-                                'px-4 py-2 text-[11px] font-inter font-semibold tracking-[0.18em] uppercase border rounded-sm transition-all duration-300',
-                                scrolled
-                                    ? 'border-[rgba(194,160,106,0.5)] text-[#0a0a0a] hover:bg-gold hover:border-gold hover:text-white'
-                                    : 'border-white/50 text-white hover:bg-white/15 hover:border-white/80'
-                            )}
+                            className="lux-btn-filled !py-2 !px-4 !min-w-[140px] !text-[10px]"
+                            style={{
+                                background: scrolled ? '#c2a06a' : 'rgba(255,255,255,0.1)',
+                                borderColor: scrolled ? '#c2a06a' : 'rgba(255,255,255,0.4)',
+                                color: '#fff'
+                            }}
                         >
                             Enquire Now
                         </button>

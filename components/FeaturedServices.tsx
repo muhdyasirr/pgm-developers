@@ -92,9 +92,11 @@ export default function FeaturedServices() {
                     <p className="lux-body mb-10 max-w-sm" style={{ textAlign: 'justify', textJustify: 'inter-word', hyphens: 'auto', WebkitHyphens: 'auto' }}>
                         We guide you through every step of buying your dream villa, from selecting the right home to final registration. Our team ensures a smooth, transparent, and hassle-free experience, helping you move into a comfortable and secure lifestyle at Rivera.
                     </p>
-                    <button className="lux-btn-filled" onClick={() => openEnquiry()}>
-                        Enquire Now
-                    </button>
+                    <div className="flex justify-center md:justify-start">
+                        <button className="lux-btn-filled" onClick={() => openEnquiry()}>
+                            Enquire Now
+                        </button>
+                    </div>
                 </div>
 
                 {/* Right: 2+3 grid of clay cards */}

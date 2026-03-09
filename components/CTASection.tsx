@@ -31,7 +31,7 @@ export default function CTASection() {
                     </div>
 
                     <ScrollReveal delay={0.2} direction="left">
-                        <div className="flex flex-col sm:flex-row gap-3">
+                        <div className="flex flex-col sm:flex-row justify-center md:justify-end gap-3">
                             <a href="https://maps.google.com/?q=Kozhikode,Kerala,India" target="_blank" rel="noopener noreferrer" className="lux-btn">
                                 <Navigation size={13} /> Open Map
                             </a>

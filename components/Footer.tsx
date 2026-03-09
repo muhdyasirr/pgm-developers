@@ -122,12 +122,14 @@ export default function Footer() {
                             </li>
                         </ul>
 
-                        <button
-                            onClick={() => openEnquiry()}
-                            className="bg-gold text-white px-8 py-3 rounded-full mt-8 font-inter text-xs font-bold tracking-widest uppercase hover:bg-dark transition-all duration-300 shadow-lg shadow-gold/20"
-                        >
-                            Send Enquiry
-                        </button>
+                        <div className="flex justify-center md:justify-start">
+                            <button
+                                onClick={() => openEnquiry()}
+                                className="lux-btn-filled mt-8"
+                            >
+                                Send Enquiry
+                            </button>
+                        </div>
                     </div>
 
                 </div>

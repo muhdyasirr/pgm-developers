@@ -76,7 +76,7 @@ export default function AboutSection() {
                         </ScrollReveal>
 
                         <ScrollReveal delay={0.35}>
-                            <div>
+                            <div className="flex justify-center lg:justify-start">
                                 <button
                                     onClick={() => openEnquiry()}
                                     className="lux-btn-filled"

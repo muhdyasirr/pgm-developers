@@ -94,7 +94,7 @@ export default function ExpertiseSection() {
                         </ScrollReveal>
 
                         <ScrollReveal delay={0.4}>
-                            <div>
+                            <div className="flex justify-center lg:justify-start">
                                 <button onClick={() => openEnquiry()}
                                     className="lux-btn-filled">
                                     Enquire Now

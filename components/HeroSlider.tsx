@@ -144,9 +144,9 @@ export default function HeroSection() {
                     </p>
 
                     {/* Button */}
-                    <div ref={btnRef} className="opacity-0">
+                    <div ref={btnRef} className="opacity-0 flex justify-center md:justify-start">
                         <a href="#" onClick={(e) => { e.preventDefault(); openEnquiry() }}
-                            className="lux-btn-filled inline-flex">
+                            className="lux-btn-filled">
                             Enquire Now
                         </a>
                     </div>
