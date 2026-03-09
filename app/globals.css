@@ -122,9 +122,6 @@ body {
   font-size: 18px;
   line-height: 1.85;
   color: var(--gray-text);
-  text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
 }
 
 /* Hairline gold divider */
