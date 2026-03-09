@@ -45,7 +45,7 @@ export default function Footer() {
                                 Developers
                             </div>
                         </div>
-                        <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 300, lineHeight: 1.85, color: '#6b7280', marginBottom: '20px', maxWidth: '260px' }}>
+                        <p className="text-justify hyphens-auto" style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 300, lineHeight: 1.85, color: '#6b7280', marginBottom: '20px', maxWidth: '260px' }}>
                             PGM Group of Companies consists of 14 great organizations across Kerala and Gulf Countries with successful business experience in Rubber, Gold, Shipping & Transport and Real-estate & Developers.
                         </p>
                         {/* Socials */}

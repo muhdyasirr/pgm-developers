@@ -86,10 +86,10 @@ export default function FeaturedServices() {
                 {/* Left: heading block */}
                 <div className="md:w-2/5 flex flex-col justify-center">
                     <p className="lux-label mb-5">What We Offer</p>
-                    <h2 className="mb-6" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(28px, 7vw, 64px)', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.05, letterSpacing: '-0.01em' }}>
-                        Featured <em style={{ fontStyle: 'italic', color: '#c2a06a' }}>Services</em>
+                    <h2 className="lux-heading text-[clamp(28px,5vw,42px)] font-bold text-dark mb-4">
+                        Exceptional <span className="text-gold italic">Services</span> & Amenities
                     </h2>
-                    <p className="lux-body mb-10 max-w-sm">
+                    <p className="lux-body mb-10 max-w-sm text-justify hyphens-auto">
                         We guide you through every step of buying your dream villa, from selecting the right home to final registration. Our team ensures a smooth, transparent, and hassle-free experience, helping you move into a comfortable and secure lifestyle at Rivera.
                     </p>
                     <button className="lux-btn-filled" onClick={() => openEnquiry()}>
@@ -121,10 +121,8 @@ function ServiceCard({ svc }: { svc: typeof services[number] }) {
                 <div className="mb-4">{svc.icon}</div>
             </div>
             <div>
-                <p className="mb-2" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '20px', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.2 }}>
-                    {svc.title}
-                </p>
-                <p className="lux-body mb-3" style={{ fontSize: 'clamp(13px, 3.5vw, 15px)', lineHeight: 1.6 }}>{svc.desc}</p>
+                <h3 className="font-cormorant text-xl font-bold text-dark mb-2 group-hover:text-gold transition-colors">{svc.title}</h3>
+                <p className="lux-body mb-3 text-justify hyphens-auto" style={{ fontSize: 'clamp(13px, 3.5vw, 15px)', lineHeight: 1.6 }}>{svc.desc}</p>
                 {/* <button className="flex items-center gap-1.5" style={{ fontFamily: 'Inter, sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#c2a06a' }}>
                     View More <span style={{ fontSize: '11px' }}>↗</span>
                 </button> */}

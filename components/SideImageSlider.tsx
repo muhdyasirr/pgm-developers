@@ -120,18 +120,17 @@ export default function BrochureSection() {
                         }}
                     >
                         <div>
-                            <p style={{
-                                fontFamily: 'Cormorant Garamond, serif',
-                                fontSize: '22px',
-                                fontWeight: 700,
-                                color: '#0a0a0a',
-                                lineHeight: 1.2,
+                            <p className="text-justify hyphens-auto" style={{
+                                fontFamily: 'Inter, sans-serif',
+                                fontSize: '15px',
+                                color: '#6b7280',
+                                lineHeight: 1.6
                             }}>
                                 PGM Developers <em style={{ fontStyle: 'italic', color: '#c2a06a' }}>Brochure</em>
                             </p>
                             {!hasSubmitted && (
-                                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: '#6b7280', marginTop: '4px' }}>
-                                    Fill in a quick form to unlock the PDF download
+                                <p className="text-justify hyphens-auto" style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: '#6b7280', marginTop: '4px' }}>
+                                    Comprehensive insights into specifications and amenities.
                                 </p>
                             )}
                         </div>

@@ -140,7 +140,7 @@ export default function HeroSection() {
 
                     {/* Sub */}
                     <p ref={subRef} className="text-white/70 mb-7 sm:mb-9 opacity-0 max-w-xs sm:max-w-sm md:max-w-md"
-                        style={{ fontFamily: 'Inter, sans-serif', fontSize: 'clamp(18px, 4.5vw, 28px)', lineHeight: 1.6, fontWeight: 300 }}>
+                        style={{ fontFamily: 'Inter, sans-serif', fontSize: 'clamp(18px, 4.5vw, 28px)', lineHeight: 1.6, fontWeight: 300, textAlign: 'justify', hyphens: 'auto', WebkitHyphens: 'auto' }}>
                         PGM Rivera <span style={{ color: '#c2a06a', fontWeight: 600 }}>Mannarkkad</span> premium villa community
                     </p>
 
