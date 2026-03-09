@@ -8,10 +8,10 @@ import { useEnquiry } from '@/context/EnquiryContext'
 const amenityFeatures = [
     { icon: Waves, label: 'Infinity Pool' },
     { icon: Dumbbell, label: 'Fitness Center' },
-    { icon: UtensilsCrossed, label: 'Fine Dining' },
+    { icon: UtensilsCrossed, label: 'Fine Dining Area' },
     { icon: TreePine, label: 'Landscaped Gardens' },
     { icon: BookOpen, label: 'Reading Lounge' },
-    { icon: Users, label: 'Clubhouse Events' },
+    { icon: Users, label: 'Community Events' },
 ]
 
 export default function ExpertiseSection() {
