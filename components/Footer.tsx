@@ -7,11 +7,6 @@ import { useEnquiry } from '@/context/EnquiryContext'
 export default function Footer() {
     const { open: openEnquiry } = useEnquiry()
 
-    const handleNav = (href: string) => {
-        const el = document.querySelector(href)
-        if (el) el.scrollIntoView({ behavior: 'smooth' })
-    }
-
     return (
         <footer style={{ background: '#faf7f2', borderTop: '1px solid rgba(194,160,106,0.15)' }}>
             <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12 py-16 md:py-24">
