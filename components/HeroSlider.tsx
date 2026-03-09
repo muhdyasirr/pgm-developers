@@ -59,54 +59,53 @@ export default function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             </div>
 
+            {/* RERA info — absolute far right, desktop only */}
+            <div className="hidden md:flex absolute right-0 top-32 items-center gap-3 z-30 pr-4 lg:pr-8">
+                {/* Text block (right-aligned) */}
+                <div className="flex flex-col items-end justify-center text-right">
+                    <p style={{
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: '11px',
+                        fontWeight: 500,
+                        color: 'white',
+                        letterSpacing: '0.05em',
+                        textTransform: 'uppercase',
+                        marginBottom: '4px'
+                    }}>
+                        K-RERA/PRJ/PKD/071/2024
+                    </p>
+                    <p style={{
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: '10px',
+                        color: 'rgba(255,255,255,0.7)',
+                        marginBottom: '2px'
+                    }}>
+                        rera.kerala.gov.in
+                    </p>
+                    <p style={{
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: '10px',
+                        color: 'rgba(255,255,255,0.7)'
+                    }}>
+                        www.pgmdevelopers.com
+                    </p>
+                </div>
+
+                {/* QR Code */}
+                <div className="bg-transparent p-1.5 rounded-sm">
+                    <Image
+                        src="/qr.png"
+                        alt="RERA QR Code"
+                        width={110}
+                        height={110}
+                        className="object-contain"
+                        style={{ display: 'block' }}
+                    />
+                </div>
+            </div>
+
             {/* Content — stacks vertically on mobile */}
             <div className="relative z-20 flex flex-col justify-between min-h-[100svh] px-5 sm:px-8 md:px-14 lg:px-20 pt-28 pb-6 sm:pt-32 max-w-7xl mx-auto w-full">
-
-                {/* RERA info — top right, desktop only */}
-                <div className="hidden md:flex absolute right-0 top-32 items-center gap-3 z-30">
-
-                    {/* Text block (right-aligned) */}
-                    <div className="flex flex-col items-end justify-center text-right">
-                        <p style={{
-                            fontFamily: 'Inter, sans-serif',
-                            fontSize: '11px',
-                            fontWeight: 500,
-                            color: 'white',
-                            letterSpacing: '0.05em',
-                            textTransform: 'uppercase',
-                            marginBottom: '4px'
-                        }}>
-                            K-RERA/PRJ/PKD/071/2024
-                        </p>
-                        <p style={{
-                            fontFamily: 'Inter, sans-serif',
-                            fontSize: '10px',
-                            color: 'rgba(255,255,255,0.7)',
-                            marginBottom: '2px'
-                        }}>
-                            rera.kerala.gov.in
-                        </p>
-                        <p style={{
-                            fontFamily: 'Inter, sans-serif',
-                            fontSize: '10px',
-                            color: 'rgba(255,255,255,0.7)'
-                        }}>
-                            www.pgmdevelopers.com
-                        </p>
-                    </div>
-
-                    {/* QR Code */}
-                    <div className="bg-transparent p-1.5 rounded-sm">
-                        <Image
-                            src="/qr.png"
-                            alt="RERA QR Code"
-                            width={110}
-                            height={110}
-                            className="object-contain"
-                            style={{ display: 'block' }}
-                        />
-                    </div>
-                </div>
 
                 {/* Top: headline block */}
                 <div className="flex-1 flex flex-col justify-center">

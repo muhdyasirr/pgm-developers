@@ -65,8 +65,8 @@ export default function BrochureSection() {
                 {/* ── Header ── */}
                 <ScrollReveal className="flex items-center gap-4 mb-10">
                     <div className="w-8 h-px bg-gold" />
-                    <span className="lux-label">Rivera Villas</span>
-                    <h2 style={{
+                    <span className="lux-label">Rivera Villa</span>
+                    {/* <h2 style={{
                         fontFamily: 'Cormorant Garamond, serif',
                         fontSize: 'clamp(22px, 5vw, 52px)',
                         fontWeight: 700,
@@ -75,7 +75,7 @@ export default function BrochureSection() {
                     }}>
                         Project{' '}
                         <em style={{ fontStyle: 'italic', color: '#c2a06a' }}>Brochure</em>
-                    </h2>
+                    </h2> */}
                 </ScrollReveal>
 
                 {/* ── Auto slider ── */}
