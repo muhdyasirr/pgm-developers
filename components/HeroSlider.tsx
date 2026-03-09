@@ -62,8 +62,8 @@ export default function HeroSection() {
             {/* Content — stacks vertically on mobile */}
             <div className="relative z-20 flex flex-col justify-between min-h-[100svh] px-5 sm:px-8 md:px-14 lg:px-20 pt-28 pb-6 sm:pt-32 max-w-7xl mx-auto w-full">
 
-                {/* RERA info — right side, desktop only */}
-                <div className="hidden md:flex absolute right-0 bottom-[22%] items-center gap-3 z-30">
+                {/* RERA info — top right, desktop only */}
+                <div className="hidden md:flex absolute right-0 top-32 items-center gap-3 z-30">
 
                     {/* Text block (right-aligned) */}
                     <div className="flex flex-col items-end justify-center text-right">

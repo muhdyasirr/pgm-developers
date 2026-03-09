@@ -1,6 +1,7 @@
 'use client'
 
 import { Instagram, Facebook, Mail, Phone, MapPin } from 'lucide-react'
+import Image from 'next/image'
 import { useEnquiry } from '@/context/EnquiryContext'
 
 const quickLinks = [
@@ -37,15 +38,40 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12 py-14 md:py-20">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
 
-                    {/* Brand */}
+                    {/* Brand & RERA (Side-by-side on mobile) */}
                     <div className="lg:col-span-1">
-                        <div className="mb-6">
-                            <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '28px', fontWeight: 900, letterSpacing: '0.06em', color: '#0a0a0a', lineHeight: 1 }}>PGM</div>
-                            <div style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '10px', letterSpacing: '0.35em', color: '#c2a06a', textTransform: 'uppercase', fontStyle: 'italic', marginTop: '2px' }}>
-                                Developers
+                        <div className="flex flex-row justify-between items-center lg:flex-col lg:items-start mb-8 gap-4">
+                            {/* Logo */}
+                            <div className="mb-0 lg:mb-6">
+                                <Image
+                                    src="/logo1.png"
+                                    alt="PGM Rivera"
+                                    width={180}
+                                    height={70}
+                                    className="object-contain"
+                                    style={{ height: '60px', width: 'auto' }}
+                                />
+                            </div>
+
+                            {/* RERA Block (only side-by-side on mobile, or stacked below logo on larger screens) */}
+                            <div className="flex items-center gap-2 lg:mt-2">
+                                <div className="flex flex-col items-end lg:items-start">
+                                    <p className="text-[9px] font-bold text-dark tracking-wider uppercase">K-RERA/PRJ/PKD/071/2024</p>
+                                    <p className="text-[8px] text-gray-text">rera.kerala.gov.in</p>
+                                </div>
+                                <div className="bg-white p-1 rounded-sm border border-gold/20">
+                                    <Image
+                                        src="/qr.png"
+                                        alt="RERA QR"
+                                        width={45}
+                                        height={45}
+                                        className="object-contain"
+                                    />
+                                </div>
                             </div>
                         </div>
-                        <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 300, lineHeight: 1.85, color: '#6b7280', marginBottom: '20px', maxWidth: '260px' }}>
+
+                        <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 300, lineHeight: 1.85, color: '#6b7280', marginBottom: '20px', maxWidth: '280px' }}>
                             PGM Group of Companies consists of 14 great organizations across Kerala and Gulf Countries with successful business experience in Rubber, Gold, Shipping & Transport and Real-estate & Developers.
                         </p>
                         {/* Socials */}
