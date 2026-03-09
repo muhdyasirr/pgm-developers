@@ -120,7 +120,7 @@ export default function BrochureSection() {
                         }}
                     >
                         <div>
-                            <p className="text-justify hyphens-auto" style={{
+                            <p className="text-justify md:text-left hyphens-auto md:hyphens-none" style={{
                                 fontFamily: 'Inter, sans-serif',
                                 fontSize: '15px',
                                 color: '#6b7280',
@@ -129,7 +129,7 @@ export default function BrochureSection() {
                                 PGM Developers <em style={{ fontStyle: 'italic', color: '#c2a06a' }}>Brochure</em>
                             </p>
                             {!hasSubmitted && (
-                                <p className="text-justify hyphens-auto" style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: '#6b7280', marginTop: '4px' }}>
+                                <p className="text-justify md:text-left hyphens-auto md:hyphens-none" style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: '#6b7280', marginTop: '4px' }}>
                                     Comprehensive insights into specifications and amenities.
                                 </p>
                             )}

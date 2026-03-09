@@ -73,7 +73,7 @@ export default function ExpertiseSection() {
                         </ScrollReveal>
 
                         <ScrollReveal delay={0.15}>
-                            <p className="lux-body mb-10 text-justify hyphens-auto">
+                            <p className="lux-body mb-10 text-justify md:text-left hyphens-auto md:hyphens-none">
                                 Step into a premium lifestyle at Rivera. Our 10,000 sq. ft. clubhouse is designed for comfort, relaxation, and community living, offering modern amenities in a peaceful natural setting.
                             </p>
                         </ScrollReveal>
