@@ -34,7 +34,7 @@ export default function Footer() {
     return (
         <footer style={{ background: '#faf7f2', borderTop: '1px solid rgba(194,160,106,0.15)' }}>
             {/* Main Footer */}
-            <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 py-14 md:py-20">
+            <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12 py-14 md:py-20">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
 
                     {/* Brand */}
@@ -121,13 +121,13 @@ export default function Footer() {
                                 <div className="flex items-start gap-3"
                                     style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', fontWeight: 300, color: '#6b7280' }}>
                                     <MapPin size={13} style={{ marginTop: '2px', flexShrink: 0, color: '#c2a06a' }} />
-                                    <span>Kodathipadi, Mannarkkad,<br />Kerala, India — 678582</span>
+                                    <span>Kodathipadi, Mannarkkad,<br />Kerala, India - 678582</span>
                                 </div>
                             </li>
                         </ul>
 
                         <button onClick={() => openEnquiry()} className="lux-btn-filled mt-8 inline-flex">
-                            Send Enquiry <ArrowUpRight size={13} />
+                            Send Enquiry
                         </button>
                     </div>
                 </div>
@@ -135,7 +135,7 @@ export default function Footer() {
 
             {/* Bottom bar */}
             <div style={{ borderTop: '1px solid rgba(194,160,106,0.12)' }}>
-                <div className="max-w-7xl mx-auto px-6 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
                     <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', fontWeight: 300, letterSpacing: '0.1em', color: 'rgba(10,10,10,0.35)' }}>
                         © {new Date().getFullYear()} PGM Developers. All Rights Reserved.
                     </span>

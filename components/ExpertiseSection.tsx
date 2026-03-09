@@ -18,7 +18,7 @@ export default function ExpertiseSection() {
     const { open: openEnquiry } = useEnquiry()
     return (
         <section id="expertise" className="py-8 md:py-28 lg:py-36 overflow-hidden" style={{ background: 'linear-gradient(160deg, #faf7f2 0%, #fefcf8 50%, #faf7f2 100%)' }}>
-            <div className="max-w-7xl mx-auto px-6 md:px-12">
+            <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12">
 
                 {/* Label */}
                 <ScrollReveal className="flex items-center gap-4 mb-16">
@@ -74,7 +74,7 @@ export default function ExpertiseSection() {
 
                         <ScrollReveal delay={0.2}>
                             <p className="lux-body mb-10">
-                                Step into a lifestyle crafted to perfection. Our clubhouse, spanning over 10,000 sq. ft., is a sanctuary of refined luxury — where world-class amenities meet the serenity of Kerala&apos;s natural beauty. Every detail has been thoughtfully designed to give you an elevated living experience from day one.
+                                Step into a premium lifestyle at Rivera. Our 10,000 sq. ft. clubhouse is designed for comfort, relaxation, and community living, offering modern amenities in a peaceful natural setting.
                             </p>
                         </ScrollReveal>
 
@@ -94,10 +94,12 @@ export default function ExpertiseSection() {
                         </ScrollReveal>
 
                         <ScrollReveal delay={0.4}>
-                            <button onClick={() => openEnquiry()}
-                                className="lux-btn-filled">
-                                Enquire Now
-                            </button>
+                            <div>
+                                <button onClick={() => openEnquiry()}
+                                    className="lux-btn-filled">
+                                    Enquire Now
+                                </button>
+                            </div>
                         </ScrollReveal>
                     </div>
                 </div>

@@ -34,7 +34,7 @@ export default function ProjectsGrid() {
 
     return (
         <section id="projects" className="py-8 md:py-28 lg:py-36" style={{ background: '#fefcf8' }}>
-            <div className="max-w-7xl mx-auto px-6 md:px-12">
+            <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                     <div>
@@ -45,7 +45,7 @@ export default function ProjectsGrid() {
                             </div>
                         </ScrollReveal>
                         <ScrollReveal delay={0.1}>
-                            <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(40px, 5.5vw, 74px)', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.05 }}>
+                            <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(28px, 7vw, 74px)', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.05 }}>
                                 Signature{' '}
                                 <em style={{ fontStyle: 'italic', color: '#c2a06a' }}>Projects</em>
                             </h2>

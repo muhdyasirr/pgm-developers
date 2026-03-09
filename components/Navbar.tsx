@@ -41,7 +41,7 @@ export default function Navbar() {
                     WebkitBackdropFilter: 'blur(20px) saturate(160%)',
                 } : {}}
             >
-                <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+                <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12 flex items-center justify-between">
                     {/* Logo */}
                     <a href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-3 group">
                         <div className="flex flex-col items-start">
@@ -53,9 +53,9 @@ export default function Navbar() {
                                 Developers
                             </span>
                         </div>
-                        <div className="w-px h-7 mx-1" style={{ background: 'rgba(194,160,106,0.35)' }} />
+                        <div className="hidden md:block w-px h-7 mx-1" style={{ background: 'rgba(194,160,106,0.35)' }} />
                         <span className={clsx(
-                            'text-[10px] font-light tracking-[0.18em] uppercase leading-tight max-w-[72px] font-inter transition-colors duration-500',
+                            'hidden md:block text-[10px] font-light tracking-[0.18em] uppercase leading-tight max-w-[72px] font-inter transition-colors duration-500',
                             scrolled ? 'text-[#6b7280]' : 'text-white/55'
                         )}>Build. Inspire. Endure.</span>
                     </a>
@@ -90,14 +90,27 @@ export default function Navbar() {
                         </li>
                     </ul>
 
-                    {/* Mobile hamburger */}
-                    <button
-                        className={clsx('md:hidden transition-colors', scrolled ? 'text-[#0a0a0a]/80' : 'text-white/90')}
-                        onClick={() => setMenuOpen(!menuOpen)}
-                        aria-label="Toggle menu"
-                    >
-                        {menuOpen ? <X size={22} /> : <Menu size={22} />}
-                    </button>
+                    {/* Mobile: Enquire Now + hamburger */}
+                    <div className="flex md:hidden items-center gap-3">
+                        <button
+                            onClick={() => openEnquiry()}
+                            className={clsx(
+                                'px-4 py-2 text-[11px] font-inter font-semibold tracking-[0.18em] uppercase border rounded-sm transition-all duration-300',
+                                scrolled
+                                    ? 'border-[rgba(194,160,106,0.5)] text-[#0a0a0a] hover:bg-gold hover:border-gold hover:text-white'
+                                    : 'border-white/50 text-white hover:bg-white/15 hover:border-white/80'
+                            )}
+                        >
+                            Enquire Now
+                        </button>
+                        <button
+                            className={clsx('transition-colors', scrolled ? 'text-[#0a0a0a]/80' : 'text-white/90')}
+                            onClick={() => setMenuOpen(!menuOpen)}
+                            aria-label="Toggle menu"
+                        >
+                            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+                        </button>
+                    </div>
                 </div>
             </nav>
 

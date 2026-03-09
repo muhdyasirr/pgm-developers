@@ -9,9 +9,10 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import { ChevronLeft, ChevronRight, Download } from 'lucide-react'
 import ScrollReveal from './ScrollReveal'
+import { useEnquiry } from '@/context/EnquiryContext'
 
-// Brochure pages: 0002 → 0024
-const PAGES = Array.from({ length: 23 }, (_, i) => {
+// Brochure pages: 0002 → 0018
+const PAGES = Array.from({ length: 17 }, (_, i) => {
     const num = String(i + 2).padStart(4, '0')
     return `/PGM-Developers-Brochure-2025_pages-to-jpg-${num}.jpg`
 })
@@ -20,8 +21,10 @@ const PDF_FILE = '/PGM-Developers-Brochure-2025.pdf'
 
 export default function BrochureSection() {
     const mainSwiperRef = useRef<SwiperType | null>(null)
+    const { hasSubmitted, open } = useEnquiry()
 
-    const handleDownloadClick = useCallback(() => {
+    /** Directly triggers the browser download */
+    const triggerDownload = useCallback(() => {
         const link = document.createElement('a')
         link.href = PDF_FILE
         link.download = 'PGM-Developers-Brochure-2025.pdf'
@@ -29,6 +32,18 @@ export default function BrochureSection() {
         link.click()
         document.body.removeChild(link)
     }, [])
+
+    /**
+     * If the user has already submitted the enquiry form → download right away.
+     * Otherwise → open the modal; triggerDownload fires automatically on success.
+     */
+    const handleDownloadClick = useCallback(() => {
+        if (hasSubmitted) {
+            triggerDownload()
+        } else {
+            open(triggerDownload)
+        }
+    }, [hasSubmitted, open, triggerDownload])
 
     return (
         <section
@@ -45,7 +60,7 @@ export default function BrochureSection() {
                 }}
             />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-12 md:py-20">
+            <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 md:px-12 py-12 md:py-20">
 
                 {/* ── Header ── */}
                 <ScrollReveal className="flex items-center gap-4 mb-10">
@@ -53,7 +68,7 @@ export default function BrochureSection() {
                     <span className="lux-label">Rivera Villas</span>
                     <h2 style={{
                         fontFamily: 'Cormorant Garamond, serif',
-                        fontSize: 'clamp(28px, 4vw, 52px)',
+                        fontSize: 'clamp(22px, 5vw, 52px)',
                         fontWeight: 700,
                         color: '#0a0a0a',
                         lineHeight: 1.05,
@@ -66,42 +81,6 @@ export default function BrochureSection() {
                 {/* ── Auto slider ── */}
                 <ScrollReveal delay={0.1}>
                     <div className="relative" style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 60px rgba(194,160,106,0.15), 0 0 0 1px rgba(194,160,106,0.2)' }}>
-
-                        {/* Prev arrow */}
-                        <button
-                            aria-label="Previous page"
-                            onClick={() => mainSwiperRef.current?.slidePrev()}
-                            style={{
-                                position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)',
-                                zIndex: 10, width: '44px', height: '44px', borderRadius: '50%',
-                                background: 'rgba(255,252,248,0.85)', border: '1px solid rgba(194,160,106,0.35)',
-                                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                color: '#c2a06a', cursor: 'pointer', backdropFilter: 'blur(6px)',
-                                transition: 'background 0.2s ease, color 0.2s ease',
-                            }}
-                            onMouseEnter={e => { e.currentTarget.style.background = '#c2a06a'; e.currentTarget.style.color = '#fff' }}
-                            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,252,248,0.85)'; e.currentTarget.style.color = '#c2a06a' }}
-                        >
-                            <ChevronLeft size={20} />
-                        </button>
-
-                        {/* Next arrow */}
-                        <button
-                            aria-label="Next page"
-                            onClick={() => mainSwiperRef.current?.slideNext()}
-                            style={{
-                                position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)',
-                                zIndex: 10, width: '44px', height: '44px', borderRadius: '50%',
-                                background: 'rgba(255,252,248,0.85)', border: '1px solid rgba(194,160,106,0.35)',
-                                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                color: '#c2a06a', cursor: 'pointer', backdropFilter: 'blur(6px)',
-                                transition: 'background 0.2s ease, color 0.2s ease',
-                            }}
-                            onMouseEnter={e => { e.currentTarget.style.background = '#c2a06a'; e.currentTarget.style.color = '#fff' }}
-                            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,252,248,0.85)'; e.currentTarget.style.color = '#c2a06a' }}
-                        >
-                            <ChevronRight size={20} />
-                        </button>
 
                         <Swiper
                             modules={[Navigation, Autoplay]}
@@ -140,22 +119,29 @@ export default function BrochureSection() {
                             boxShadow: '6px 6px 20px rgba(194,160,106,0.1), -4px -4px 12px rgba(255,255,255,0.85)',
                         }}
                     >
-                        <p style={{
-                            fontFamily: 'Cormorant Garamond, serif',
-                            fontSize: '22px',
-                            fontWeight: 700,
-                            color: '#0a0a0a',
-                            lineHeight: 1.2,
-                        }}>
-                            PGM Developers <em style={{ fontStyle: 'italic', color: '#c2a06a' }}>Brochure</em>
-                        </p>
+                        <div>
+                            <p style={{
+                                fontFamily: 'Cormorant Garamond, serif',
+                                fontSize: '22px',
+                                fontWeight: 700,
+                                color: '#0a0a0a',
+                                lineHeight: 1.2,
+                            }}>
+                                PGM Developers <em style={{ fontStyle: 'italic', color: '#c2a06a' }}>Brochure</em>
+                            </p>
+                            {!hasSubmitted && (
+                                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: '#6b7280', marginTop: '4px' }}>
+                                    Fill in a quick form to unlock the PDF download
+                                </p>
+                            )}
+                        </div>
 
                         <button
                             onClick={handleDownloadClick}
                             className="lux-btn-filled inline-flex items-center gap-3 flex-shrink-0"
                         >
                             <Download size={15} />
-                            Download PDF
+                            {hasSubmitted ? 'Download PDF' : 'Get Brochure'}
                         </button>
                     </div>
                 </ScrollReveal>

@@ -45,7 +45,7 @@ export default function AboutSection() {
                 PGM
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12 relative z-10">
                 {/* Label */}
                 <ScrollReveal className="flex items-center gap-4 mb-16">
                     <div className="w-10 h-px bg-gold" />
@@ -54,12 +54,12 @@ export default function AboutSection() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                     {/* Left: text */}
-                    <div className="relative pl-8">
-                        <div ref={lineRef} className="absolute left-0 top-0 w-[3px] h-full origin-top" style={{ background: 'linear-gradient(180deg, #c2a06a 0%, rgba(194,160,106,0.2) 100%)' }} />
+                    <div className="relative pl-0 lg:pl-8">
+                        <div ref={lineRef} className="hidden lg:block absolute left-0 top-0 w-[3px] h-full origin-top" style={{ background: 'linear-gradient(180deg, #c2a06a 0%, rgba(194,160,106,0.2) 100%)' }} />
 
                         <ScrollReveal direction="left">
-                            <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(36px, 4.5vw, 64px)', fontWeight: 700, lineHeight: 1.05, color: '#0a0a0a' }}>
-                                Rivera Villas — <em className="text-gold" style={{ fontStyle: 'italic' }}>Premium Gated</em> Villa Community
+                            <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(26px, 6vw, 64px)', fontWeight: 700, lineHeight: 1.05, color: '#0a0a0a' }}>
+                                Rivera Villas, <em className="text-gold" style={{ fontStyle: 'italic' }}>Premium Gated</em> Villa Community
                             </h2>
                         </ScrollReveal>
 
@@ -76,12 +76,14 @@ export default function AboutSection() {
                         </ScrollReveal>
 
                         <ScrollReveal delay={0.35}>
-                            <button
-                                onClick={() => openEnquiry()}
-                                className="lux-btn-filled"
-                            >
-                                Enquire Now
-                            </button>
+                            <div>
+                                <button
+                                    onClick={() => openEnquiry()}
+                                    className="lux-btn-filled"
+                                >
+                                    Enquire Now
+                                </button>
+                            </div>
                         </ScrollReveal>
                     </div>
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useState, ReactNode } from 'react'
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
 
 interface EnquiryContextType {
     isOpen: boolean
@@ -17,6 +17,18 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
     const [isOpen, setIsOpen] = useState(false)
     const [hasSubmitted, setHasSubmitted] = useState(false)
     const [pendingCallback, setPendingCallback] = useState<(() => void) | null>(null)
+
+    // Auto-open once per session after 2.5 s
+    useEffect(() => {
+        const alreadyShown = sessionStorage.getItem('enquiry_shown')
+        if (!alreadyShown) {
+            const timer = setTimeout(() => {
+                setIsOpen(true)
+                sessionStorage.setItem('enquiry_shown', '1')
+            }, 2500)
+            return () => clearTimeout(timer)
+        }
+    }, [])
 
     const open = (onSuccess?: () => void) => {
         if (onSuccess) setPendingCallback(() => onSuccess)

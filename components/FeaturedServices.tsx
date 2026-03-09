@@ -61,8 +61,8 @@ const services = [
     },
     {
         number: '05',
-        title: 'Dedicated After‑sales Service',
-        desc: 'Ongoing support and care long after you\&apos;ve moved into your dream home.',
+        title: 'Dedicated After-sales Service',
+        desc: "Ongoing support and care long after you've moved into your dream home.",
         icon: (
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
                 <circle cx="18" cy="14" r="7" stroke="#c2a06a" strokeWidth="1.5" />
@@ -77,7 +77,7 @@ const services = [
 export default function FeaturedServices() {
     const { open: openEnquiry } = useEnquiry()
     return (
-        <section className="w-full py-12 md:py-20 lg:py-28 px-6 md:px-16 relative overflow-hidden" style={{ background: '#fefcf8' }}>
+        <section className="w-full py-12 md:py-20 lg:py-28 px-5 md:px-12 relative overflow-hidden" style={{ background: '#fefcf8' }}>
             {/* Background decoration */}
             <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full pointer-events-none"
                 style={{ background: 'radial-gradient(circle, rgba(194,160,106,0.07) 0%, transparent 70%)', transform: 'translate(30%, 30%)' }} />
@@ -86,14 +86,14 @@ export default function FeaturedServices() {
                 {/* Left: heading block */}
                 <div className="md:w-2/5 flex flex-col justify-center">
                     <p className="lux-label mb-5">What We Offer</p>
-                    <h2 className="mb-6" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(40px, 4.8vw, 64px)', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.05, letterSpacing: '-0.01em' }}>
+                    <h2 className="mb-6" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(28px, 7vw, 64px)', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.05, letterSpacing: '-0.01em' }}>
                         Featured <em style={{ fontStyle: 'italic', color: '#c2a06a' }}>Services</em>
                     </h2>
                     <p className="lux-body mb-10 max-w-sm">
-                        We&apos;ll walk with you through the entire process of acquiring your dream home — one milestone at a time.
+                        We guide you through every step of buying your dream villa, from selecting the right home to final registration. Our team ensures a smooth, transparent, and hassle-free experience, helping you move into a comfortable and secure lifestyle at Rivera.
                     </p>
-                    <button className="lux-btn-filled self-start" onClick={() => openEnquiry()}>
-                        Enquire Now <span style={{ fontSize: '14px' }}>↗</span>
+                    <button className="lux-btn-filled" onClick={() => openEnquiry()}>
+                        Enquire Now
                     </button>
                 </div>
 
@@ -124,7 +124,7 @@ function ServiceCard({ svc }: { svc: typeof services[number] }) {
                 <p className="mb-2" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '20px', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.2 }}>
                     {svc.title}
                 </p>
-                <p className="lux-body mb-3" style={{ fontSize: '15px', lineHeight: 1.6 }}>{svc.desc}</p>
+                <p className="lux-body mb-3" style={{ fontSize: 'clamp(13px, 3.5vw, 15px)', lineHeight: 1.6 }}>{svc.desc}</p>
                 {/* <button className="flex items-center gap-1.5" style={{ fontFamily: 'Inter, sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#c2a06a' }}>
                     View More <span style={{ fontSize: '11px' }}>↗</span>
                 </button> */}
