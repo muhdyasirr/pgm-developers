@@ -174,7 +174,6 @@ export default function EnquiryModal() {
                                             name="name"
                                             value={form.name}
                                             onChange={handleChange}
-                                            placeholder="Your full name"
                                             className="lux-input"
                                             required
                                         />
@@ -190,7 +189,6 @@ export default function EnquiryModal() {
                                             name="phone"
                                             value={form.phone}
                                             onChange={handleChange}
-                                            placeholder="+91 98765 43210"
                                             className="lux-input"
                                             required
                                         />

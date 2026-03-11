@@ -1,13 +1,12 @@
 'use client'
 
 import { MapPin, Phone, Mail, Navigation } from 'lucide-react'
+import Image from 'next/image'
 import ScrollReveal from './ScrollReveal'
 import { useEnquiry } from '@/context/EnquiryContext'
 
 export default function CTASection() {
     const { open: openEnquiry } = useEnquiry()
-    const mapSrc = 'https://maps.google.com/maps?q=11.1520003,75.8925509&z=16&output=embed'
-
     return (
         <section id="contact" className="overflow-hidden" style={{ background: '#fefcf8' }}>
             <div className="lux-divider" />
@@ -32,7 +31,7 @@ export default function CTASection() {
 
                     <ScrollReveal delay={0.2} direction="left">
                         <div className="flex flex-col sm:flex-row justify-center md:justify-end gap-3">
-                            <a href="https://maps.google.com/?q=Kozhikode,Kerala,India" target="_blank" rel="noopener noreferrer" className="lux-btn">
+                            <a href="https://www.google.com/maps?q=10.978845,76.4368917&z=17&hl=en" target="_blank" rel="noopener noreferrer" className="lux-btn">
                                 <Navigation size={13} /> Open Map
                             </a>
                             <button onClick={() => openEnquiry()} className="lux-btn-filled">
@@ -47,13 +46,13 @@ export default function CTASection() {
                     style={{ borderRadius: '16px', boxShadow: '0 20px 60px rgba(194,160,106,0.12)', border: '1px solid rgba(194,160,106,0.15)' }}>
                     {/* Map */}
                     <ScrollReveal className="lg:col-span-2" delay={0.1}>
-                        <div className="relative w-full" style={{ height: 'min(420px, 60vw)', minHeight: '260px' }}>
-                            <iframe
-                                src={mapSrc} width="100%" height="100%"
-                                style={{ border: 0, filter: 'saturate(90%) contrast(1.05)', display: 'block' }}
-                                allowFullScreen loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                                title="PGM Developers Location"
+                        <div className="relative w-full overflow-hidden" style={{ height: 'min(750px, 95vw)', minHeight: '520px' }}>
+                            <Image
+                                src="/PGM-Developers-Brochure-2025_pages-to-jpg-00181.jpg"
+                                alt="PGM Rivera Project Plan"
+                                fill
+                                className="object-cover transition-transform duration-700 hover:scale-105"
+                                sizes="(max-width: 1024px) 100vw, 66vw"
                             />
                         </div>
                     </ScrollReveal>
@@ -67,14 +66,14 @@ export default function CTASection() {
                                     PGM Developers
                                 </h3>
                                 <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '9px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', marginBottom: '36px' }}>
-                                    Malabar Region · Kerala
+                                    Mannarkkad · Palakkad
                                 </p>
 
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                                     <div className="flex items-start gap-4">
                                         <MapPin size={15} className="text-gold mt-0.5 flex-shrink-0" />
                                         <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 300, color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>
-                                            NH 66, Kozhikode,<br />Kerala – 673 001, India
+                                            Pothozhi, Mannarkkad,<br />Palakkad, Kerala - 678582
                                         </p>
                                     </div>
                                     <div className="flex items-center gap-4">
@@ -95,7 +94,7 @@ export default function CTASection() {
                             </div>
 
                             <div className="mt-12">
-                                <a href="https://maps.google.com/?q=Kozhikode,Kerala,India" target="_blank" rel="noopener noreferrer"
+                                <a href="https://www.google.com/maps?q=10.978845,76.4368917&z=17&hl=en" target="_blank" rel="noopener noreferrer"
                                     className="inline-flex items-center gap-3 group"
                                     style={{ fontFamily: 'Inter, sans-serif', fontSize: '12px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#c2a06a' }}>
                                     <span>Get Directions</span>

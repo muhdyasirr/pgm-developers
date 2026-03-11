@@ -13,7 +13,7 @@ const slide = {
 
 const features = [
     { label: 'STARTING PRICE 80 LAKHS' },
-    { label: 'FREE SOLAR SYSTEM ' },
+    { label: 'FREE SOLAR SYSTEM * ' },
     { label: 'BANK LOAN FACILITY' },
     { label: 'PAY ONLY 15%*' },
 ]

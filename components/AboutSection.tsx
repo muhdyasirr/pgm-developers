@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger)
 const features = [
     '3BHK & 4BHK Luxury Villas',
     '6.5 Acres Gated Community',
-    'Free Solar System',
+    'Free Solar System *',
     '24/7 Security',
     'Swimming Pool & Clubhouse',
     'Health Club & Recreation Hall',
@@ -65,7 +65,7 @@ export default function AboutSection() {
 
                         <ScrollReveal delay={0.15}>
                             <p className="lux-body mt-8 mb-6" style={{ textAlign: 'justify', textJustify: 'inter-word', hyphens: 'auto', WebkitHyphens: 'auto' }}>
-                                Rivera Villas is a premium gated villa project located in Pothozhi, Mannarkkad, Palakkad, spread across 6.5 acres of lush greenery. The project offers thoughtfully designed 3BHK (1850 Sqft) and 4BHK (2200 Sqft) luxury villas with modern architecture, spacious interiors, and quality amenities.
+                                Rivera Villas is a premium gated villa project located in Pothozhi, Mannarkkad, Palakkad, spread across 6.5 acres of lush greenery. The project offers thoughtfully designed 3BHK and 4BHK luxury villas with modern architecture, spacious interiors, and quality amenities.
                             </p>
                         </ScrollReveal>
 

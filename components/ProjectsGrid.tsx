@@ -10,13 +10,13 @@ import { useEnquiry } from '@/context/EnquiryContext'
 gsap.registerPlugin(ScrollTrigger)
 
 const projects = [
-    { image: '/3 villa.jpg.jpeg', title: 'PGM Luxury Villas', category: 'Luxury Villas', location: 'Kerala', span: 'row-span-2' },
-    { image: '/02 VILLA 0new.jpg.jpeg', title: 'Signature Villa Collection', category: 'Residential', location: 'Kerala', span: '' },
-    { image: '/03 VILLA 02.jpg.jpeg', title: 'Modern Villa Series', category: 'Architectural', location: 'Kerala', span: '' },
-    { image: '/04 BACK VIEW -CLUB AND RIVER.jpg.jpeg', title: 'Riverfront Estates', category: 'Premium Villas', location: 'Kerala', span: '' },
-    { image: '/14 CLUB HOUSE 01.jpeg', title: 'The Grand Club House', category: 'Leisure & Club', location: 'Kerala', span: 'row-span-2' },
-    { image: '/17 POOL 05.jpg.jpeg', title: 'Infinity Pool Retreat', category: 'Amenities', location: 'Kerala', span: '' },
-    { image: '/09 VILLA_bedroom1.jpg.jpeg', title: 'Private Master Suite', category: 'Interiors', location: 'Kerala', span: '' },
+    { image: '/3 villa.jpg.jpeg', category: 'Luxury Villas', location: 'Mannarkkad, Palakkad', span: 'row-span-2' },
+    { image: '/02 VILLA 0new.jpg.jpeg', category: 'Residential', location: 'Mannarkkad, Palakkad', span: '' },
+    { image: '/03 VILLA 02.jpg.jpeg', category: 'Architectural', location: 'Mannarkkad, Palakkad', span: '' },
+    { image: '/PGM-Developers-Brochure-2025_pages-to-jpg-0018.jpg', category: 'Premium Villas', location: 'Mannarkkad, Palakkad', span: '' },
+    { image: '/photo_2026-03-11_15-07-06.jpg', category: 'Leisure & Club', location: 'Mannarkkad, Palakkad', span: 'row-span-2' },
+    { image: '/17 POOL 05.jpg.jpeg', category: 'Amenities', location: 'Mannarkkad, Palakkad', span: '' },
+    { image: '/09 VILLA_bedroom1.jpg.jpeg', category: 'Interiors', location: 'Mannarkkad, Palakkad', span: '' },
 ]
 
 export default function ProjectsGrid() {
@@ -57,12 +57,12 @@ export default function ProjectsGrid() {
                 <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 auto-rows-[220px] sm:auto-rows-[280px]">
                     {projects.map((project) => (
                         <div
-                            key={project.title}
+                            key={project.image}
                             className={`project-card opacity-0 relative group overflow-hidden cursor-pointer ${project.span}`}
                             style={{ borderRadius: '12px', boxShadow: '0 4px 24px rgba(194,160,106,0.08)' }}
                         >
                             <Image
-                                src={project.image} alt={project.title} fill
+                                src={project.image} alt={project.category} fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             />
@@ -72,17 +72,10 @@ export default function ProjectsGrid() {
                             <div className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.87,0,0.13,1)] flex flex-col justify-end p-8"
                                 style={{ background: 'linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.6) 50%, rgba(194,160,106,0.1) 100%)' }}>
                                 <span className="lux-label mb-2">{project.category}</span>
-                                <h3 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '24px', fontWeight: 700, color: 'white', marginBottom: '4px' }}>{project.title}</h3>
                                 <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '14px', color: 'rgba(255,255,255,0.5)' }}>{project.location}</p>
                                 <div className="mt-4 w-8 h-px bg-gold group-hover:w-16 transition-all duration-500 delay-100" />
                             </div>
 
-                            {/* Category badge — glass */}
-                            <div className="absolute top-4 left-4 px-3 py-1.5 group-hover:opacity-0 transition-opacity duration-300 glass-panel rounded-full">
-                                <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '12px', fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#0a0a0a' }}>
-                                    {project.category}
-                                </span>
-                            </div>
                         </div>
                     ))}
                 </div>

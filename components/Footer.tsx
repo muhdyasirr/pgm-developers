@@ -55,7 +55,7 @@ export default function Footer() {
                                 maxWidth: '440px'
                             }}
                         >
-                            PGM Group of Companies consists of 14 great organizations across Kerala and Gulf Countries with successful business experience in Rubber, Gold, Shipping & Transport and Real-estate & Developers.
+                            PGM Group of Companies consists of Multi great organizations across Kerala and Gulf Countries with successful business experience in Rubber, Gold, Shipping,Fitness, Health & Transport and Real-estate & Developers.
                         </p>
                     </div>
 
@@ -115,8 +115,8 @@ export default function Footer() {
                                         <MapPin size={14} style={{ color: '#c2a06a' }} />
                                     </div>
                                     <span className="mt-1">
-                                        Kodathipadi, Mannarkkad,<br />
-                                        Kerala, India - 678582
+                                        Pothozhi, Mannarkkad,<br />
+                                        Palakkad, Kerala - 678582
                                     </span>
                                 </div>
                             </li>
