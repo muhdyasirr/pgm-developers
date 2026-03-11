@@ -3,8 +3,8 @@
 import { useState } from 'react'
 
 // ─── Replace these with real numbers when ready ───
-const PHONE_NUMBER = '+919876543210'
-const WHATSAPP_NUMBER = '+919876543210' // with country code, no spaces or +
+const PHONE_NUMBER = '+919072224466'
+const WHATSAPP_NUMBER = '+919072224466' // with country code, no spaces or +
 const WHATSAPP_MESSAGE = 'Hello! I am interested in Rivera Villas. Please share more details.'
 // ──────────────────────────────────────────────────
 
@@ -13,7 +13,7 @@ export default function FloatingContact() {
     const [hoveredWA, setHoveredWA] = useState(false)
 
     const waLink = `https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, '')}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
-
+    tel: +919072224466
     return (
         <div
             style={{
