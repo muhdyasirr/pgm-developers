@@ -13,7 +13,6 @@ export default function FloatingContact() {
     const [hoveredWA, setHoveredWA] = useState(false)
 
     const waLink = `https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, '')}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
-    tel: +919072224466
     return (
         <div
             style={{
